@@ -199,6 +199,7 @@ We need to test the difference of the means of both distributions. The Student's
 In order to test normality, a Q-Q plot between the observed lengths and the normal distribution was drawn.
 
 ```{r}
+lengths.only <- data.frame(exon.length = df$mrna_length, intron.length = df$intron_length)
 exon.mean <- mean(lengths.only$exon.length)
 exon.sd <- sd(lengths.only$exon.length)
 normal.quantiles <- qnorm(((1:nrow(df)) - 0.5) / nrow(df), mean = exon.mean, sd = exon.sd)
